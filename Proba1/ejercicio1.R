@@ -28,6 +28,7 @@ m_industrial = which.max(industrial)
 m_servicios = which.max(servicios)
 m_pipa = which.max(pipa)
 
+
 column_names=c("Total", "Domestic","Comercial","Industrial", "Public Services", "Pipe")
 colors_data = c("coral1", "cyan3", "deepskyblue2", "darkgoldenrod2", "darkgreen", "deeppink3")
 png('histo.png', width = 2100, height = 2600, res = 300)
