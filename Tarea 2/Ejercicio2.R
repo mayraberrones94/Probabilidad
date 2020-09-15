@@ -1,3 +1,11 @@
+#Lib
+require(gutenbergr)
+require(tidytext)
+require(tm)
+require(dplyr)
+#require(wordcloud)
+#require(wordcloud2)
+
 austen = gutenberg_download(c(1342))
 sense = gutenberg_download(c(161))
 
@@ -12,8 +20,11 @@ palabras_sense = sense %>% unnest_tokens(words, text, "words")
 #######################
 #Primeros Intentos de graficar
 #######################
+
+prueba1 =  as.data.frame(table(palabras))
+p1 = prueba1[prueba1$Freq > 20,]
 png('barplot1.png', width = 4000, height = 2500, res = 300)
-barplot(table(palabras))
+barplot(p1$Freq, names.arg = p1$Var1)
 dev.off() 
 
 png('barplot2.png', width = 4000, height = 2500, res = 300)
@@ -47,7 +58,6 @@ barplot(sort(table(palabras$words), decreasing  = FALSE), main = "c)")
 barplot(mm_1$Freq, names.arg = mm_1$Var1, log = "y", main = "d)")
 #barplot(sort(table(palabras$words), decreasing  = TRUE), log = 'y', main = "d)")
 dev.off() 
-
 
 
 ###################
@@ -87,6 +97,25 @@ barplot(mm$Freq, names.arg = mm$Var1)
 dev.off() 
 
 fpal_sense = as.data.frame(table(palabras_sense$words))
+
+
+png('barplot51.png', width = 3000, height = 2500, res = 300)
+par(mfrow=c(2,1))
+barplot(table(palabras), main =  "a)")
+barplot(table(palabras_sense), main =  "b)")
+dev.off() 
+
+png('barplot52.png', width = 3000, height = 2500, res = 300)
+par(mfrow=c(2,1))
+barplot(mm$Freq, names.arg = mm$Var1, main = "a)")
+barplot(mms$Freq, names.arg = mms$Var1, main =  "b)")
+dev.off() 
+
+png('barplot53.png', width = 3300, height = 2500, res = 300)
+par(mfrow=c(2,1))
+barplot(mm_1$Freq, names.arg = mm_1$Var1, log = "y", main = "d)")
+barplot(mms_2$Freq, names.arg = mms_2$Var1, log = "y", main = "d)")
+dev.off() 
 
 
 #Intento de sacar la informacion como csv 1
@@ -145,6 +174,8 @@ todos_sense = c(n_elinor, n_ferrars, n_marian, n_brandon,n_will, n_stele, n_jenn
 png('barplot_ss2.png', width = 5000, height = 2500, res = 300)
 barplot(todos_sense, names.arg = nombres_sense, col = colors_data2)
 dev.off() 
+
+
 
 
 
