@@ -5,3 +5,5 @@
 [Tarea 2](https://github.com/mayraberrones94/Probabilidad/blob/master/Tarea_2/tarea2.pdf)
 
 [Tarea 3](https://github.com/mayraberrones94/Probabilidad/blob/master/Tarea_3/Tarea3.pdf)
+
+[Tarea 4](https://github.com/mayraberrones94/Probabilidad/blob/master/Tarea_4/Tarea4.pdf)
