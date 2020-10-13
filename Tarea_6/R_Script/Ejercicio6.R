@@ -60,6 +60,35 @@ cor.test(regular, bueno)
 cor.test(malo, regular)
 
 
+png("Ej6_malobox.png", width = 800, height = 1800, res = 300)
+boxplot(malo)
+dev.off()
+
+png("Ej6_regularbox.png", width = 800, height = 1800, res = 300)
+boxplot(regular)
+dev.off()
+
+png("Ej6_buenobox.png", width = 800, height = 1800, res = 300)
+boxplot(bueno)
+dev.off()
+
+plot(t.test(malo, mu = 15))
+png("Ej6_maloqq.png", width = 1000, height = 1200, res = 300)
+qqnorm(malo, main = " ")
+qqline(malo)
+dev.off()
+
+png("Ej6_regularqq.png", width = 1000, height = 1200, res = 300)
+qqnorm(regular, main = " ")
+qqline(regular)
+dev.off()
+
+png("Ej6_buenoqq.png", width = 1000, height = 1200, res = 300)
+qqnorm(bueno, main = " ")
+qqline(bueno)
+dev.off()
+
+
 png('t1.png', width = 3000, height = 2500, res = 300)
 boxplot(total, domestica, comercial, industrial, servicios, pipa, names= column_names, col=(c("coral1", "cyan3", "deepskyblue2", "darkgoldenrod2", "darkgreen", "deeppink3")))
 dev.off() 

@@ -77,7 +77,7 @@ showstringspaces=false}
 \begin{document}
 
 \title{%
-  Practice 6: } %\\~\\
+  Practice 6: Statistical Tests} %\\~\\
   %\Large }
 \author{Mayra Cristina Berrones Reyes 6291}
 
@@ -374,9 +374,64 @@ Bad and Regular & 2.9768& 22 & 0.0069 &0.1689 --- 0.7723 & 0.5358 \\
 
 In this case the null hypothesis of the correlation could only be accomplished by the pair of \texttt{bad} and \texttt{good} variables.
 
+\section{Other experimentation}
+
+We have talked and experimented with different known statistical tests. And even if now when, after all the research they seem a lot more understandable, visual queues remain a favorite. So, after some searching, we found other ways to show our data. In Figure \ref{fig9} we have the Q-Q plot, or more commonly known as the quantile-quantile plot. It helps to assess if a set of data came from some distribution such as normal or exponential.\\
+
+This is the visual check of something that the t-test does, which is assume that the variable is normally distributed, so it is not a complete proof, but something to help visualize the data. In the case of Figure \ref{fig9} we compare our results with Table \ref{tab3}, and we find similar results.\\
+
+\begin{figure}[]
+\begin{subfigure}{.3\textwidth}
+  \centering
+  \includegraphics[width=1\linewidth]{Ej6_maloqq.png}  
+  \caption{Normal Q-Q plot of bad reviews }
+  \label{sf1}
+\end{subfigure}
+\begin{subfigure}{.3\textwidth}
+  \centering
+  \includegraphics[width=1\linewidth]{Ej6_regularqq.png}  
+  \caption{Normal Q-Q plot of regular reviews}
+  \label{sf2}
+\end{subfigure}
+\begin{subfigure}{.3\textwidth}
+  \centering
+  \includegraphics[width=1\linewidth]{Ej6_buenoqq.png}  
+  \caption{Normal Q-Q plot of good reviews}
+  \label{sf3}
+\end{subfigure}
+\caption{Normal Q-Q plot of all the variables}
+\label{fig9}
+\end{figure}
+
+
+Another visual queue besides the histograms if Figure \ref{extra} to help find the mean of our data are the box plots. In Figure \ref{fig99} we show the box plots of all the variables. Here we can see more clearly the mean of each variable, as well as the odd behavior of some of the data in variable \texttt{Good}.\\
+
+\begin{figure}[]
+\begin{subfigure}{.3\textwidth}
+  \centering
+  \includegraphics[width=.9\linewidth]{Ej6_malobox.png}  
+  \caption{Box plot of bad reviews }
+  \label{sf91}
+\end{subfigure}
+\begin{subfigure}{.3\textwidth}
+  \centering
+  \includegraphics[width=.9\linewidth]{Ej6_regularbox.png}  
+  \caption{Box plot of regular reviews}
+  \label{sf92}
+\end{subfigure}
+\begin{subfigure}{.3\textwidth}
+  \centering
+  \includegraphics[width=.9\linewidth]{Ej6_buenobox.png}  
+  \caption{Box plot of good reviews}
+  \label{sf93}
+\end{subfigure}
+\caption{Box plots of all the variables}
+\label{fig99}
+\end{figure}
+
 \section{Conclusions}
 
-So far I was understanding fine the histograms and plots made in class, but in the last practice one of the mayor faults in my work was that I misinterpreted some data. With this practice the concepts of the tests and their results are clearer. They can help us move from just guessing our answers from the plots and actually proving some points.\\
+So far I was understanding fine the histograms and plots made in class, but in the last practice one of the mayor faults in my work was that I misinterpreted some data. With this practice the concepts of the tests and their results are clearer. They can help us move from just guessing our answers from the plots and actually proving some points, because many of the articles and books researched for this practice say that plots are only visual aids, and should require a bit more experimentation to back them up.\\
 
 \bibliographystyle{plainnat}
 \bibliography{tarea6}
