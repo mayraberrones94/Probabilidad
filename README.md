@@ -11,3 +11,5 @@
 [Tarea 5](https://github.com/mayraberrones94/Probabilidad/blob/master/Tarea_5/Tarea5.pdf)
 
 [Tarea 6](https://github.com/mayraberrones94/Probabilidad/blob/master/Tarea_6/Tarea6.pdf)
+
+[Tarea 6](https://github.com/mayraberrones94/Probabilidad/blob/master/Tarea_7/Tarea7.pdf)
