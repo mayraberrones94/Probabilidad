@@ -1,0 +1,492 @@
+\documentclass{article}   
+
+\usepackage{geometry}
+\usepackage{qtree}
+\usepackage[square,numbers]{natbib}
+% \usepackage{cite}  
+\geometry{a4paper}
+
+\usepackage[]{algorithm2e}
+\usepackage{amsthm}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}{Corollary}[theorem]
+\newtheorem{lemma}[theorem]{Lemma}
+\usepackage{rotating}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}    % use 8-bit T1 fonts
+\usepackage{lmodern}
+\usepackage{hyperref}       % hyperlinks
+\usepackage{lipsum}
+
+\usepackage{color, colortbl}
+
+\definecolor{Gray}{gray}{0.9}
+
+\usepackage[protrusion=true,expansion=true]{microtype}
+
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{eqnarray,amsmath}
+\usepackage[table]{xcolor}
+
+\usepackage{listings}
+\usepackage{graphicx}
+\usepackage{dirtytalk}
+
+\usepackage{rotating}
+\usepackage{caption}
+
+%% if you use PostScript figures in your article
+%% use the graphics package for simple commands
+\usepackage{graphics}
+
+
+%% or use the graphicx package for more complicated commands
+\usepackage{graphicx}
+\usepackage[table]{xcolor}
+
+\usepackage{indentfirst}
+\usepackage[utf8]{inputenc}
+ \usepackage{subcaption}
+\usepackage{xcolor}
+ 
+\usepackage{xspace,color}
+\usepackage{url}
+
+
+
+\lstset{commentstyle=\color{red},keywordstyle=\color{black},
+showstringspaces=false}
+\lstnewenvironment{rc}[1][]{\lstset{language=R}}{}
+\newcommand{\ri}[1]{\lstinline{#1}}  %% Short for 'R inline'
+
+\lstset{language=R}             % Set R to default language
+
+
+%https://tex.stackexchange.com/questions/96825/nicely-formatted-where-statement-for-maths
+ \newenvironment{where}{\noindent{}where\begin{itemize}}{\end{itemize}}
+ \renewcommand*\descriptionlabel[1]{\hspace\leftmargin$#1$}
+ 
+\lstset{escapeinside={<@}{@>}}
+% please place your own definitions here and don't use \def but
+% \newcommand{}{}
+%
+% Insert the name of "your journal" with
+% \journalname{myjournal}
+%
+\begin{document}
+
+\title{%
+  Practice 9: Exercises of expected value and variance of random variables} %\\~\\
+  %\Large }
+\author{Mayra Cristina Berrones Reyes 6291}
+
+\maketitle
+
+\section{Exercises}
+
+The exercises of this work where taken from the book Introduction to probability by Charles M. Grinstead and J. Laurie Snell \cite{grin}.
+
+\subsection{Exercise 1, page 247}
+
+A card is drawn at random form a deck consisting of cards numbered from 2 to 10. A player wins 1 dollar if the number on the card is odd and loses 1 dollar if the number is even. What is the expected value of his winnings?\\
+
+%\begin{center}
+%\dag 
+%\end{center}
+
+\begin{itemize}
+\item \textbf{Answer:}
+\end{itemize}
+
+There are in total 9 cards numbered from 2 to 10, so we have a \textit{n} $= 9$. The sample space we have for odd and even cards are \textit{n\_odd} $= (3, 5, 7, 9)$ and \textit{n\_even} $= (2, 4, 6, 8, 10)$.\\
+
+We want to know the expected value of a winning. For that we need the probability of winning and losing, as we can see in Equation \ref{eq1} and \ref{eq2},\\
+
+\begin{eqnarray}
+\label{eq1}
+\textit{w\_prob} = \frac{n\_odd}{n} = \frac{4}{9},	
+\end{eqnarray}
+
+ \begin{eqnarray}
+\label{eq2}
+\textit{l\_prob} = \frac{n\_even}{n} = \frac{5}{9}.	
+\end{eqnarray}
+
+Now we can calculate the expected value of the winnings in Equation \ref{eq3},
+
+ \begin{eqnarray}
+\label{eq3}
+E(X) = 1* \left(\frac{4}{9}\right) - 1 * \left(\frac{5}{9}\right)= - \frac{1}{9} 
+\end{eqnarray}
+\begin{flushright}
+$\blacksquare$
+\end{flushright}
+
+\subsection{Exercise 6, page 247}
+
+A die is rolled twice. Let $X$ denote the sum of the two numbers that turn up, and $Y$ the difference of the numbers (specifically, the number on the first roll minus the number of the second). Show that $E(XY) = E(X)E(Y)$. Are $X$ and $Y$ independent?\\
+\begin{itemize}
+\item \textbf{Answer:}
+\end{itemize}
+
+So if we suppose that the dice is fair, our set of possible values are $values = 6^2 =36$, with each possible outcome equally likely.\\
+
+$X$ could have the values shown in Table \ref{tab1}.\\
+
+ \begin{table}[]\caption{Calculation of probabilities for the expected value of $X$.}\label{tab1}
+\centering
+\begin{tabular}{| p{2cm} | c | c | c | c | c | c | c | c | c | c | c |}
+\hline
+$X$ value & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 & 12 \\
+\hline 
+Probabilities of each one & $\frac{1}{36}$& $\frac{2}{36}$& $\frac{3}{36}$& $\frac{4}{36}$& $\frac{5}{36}$& $\frac{6}{36}$& $\frac{5}{36}$& $\frac{4}{36}$& $\frac{3}{36}$& $\frac{2}{36}$& $\frac{1}{36}$\\
+\hline 
+Simplifying fractions& $\frac{1}{36}$& $\frac{1}{18}$& $\frac{1}{12}$& $\frac{1}{9}$& $\frac{5}{36}$& $\frac{1}{6}$& $\frac{5}{36}$& $\frac{1}{9}$& $\frac{1}{12}$& $\frac{1}{18}$& $\frac{1}{36}$\\
+\hline
+\end{tabular}
+\end{table}
+
+We can calculate the expected value of $X$ in Equation \ref{eq4},\\
+
+ \begin{eqnarray}
+\label{eq4}
+\begin{split}
+E(X) = &2* \left(\frac{1}{36}\right) + 3* \left(\frac{1}{18}\right)+4* \left(\frac{1}{12}\right)+5* \left(\frac{1}{9}\right)+6* \left(\frac{5}{36}\right)+7* \left(\frac{1}{6}\right)+\\
+&8* \left(\frac{5}{36}\right)+9* \left(\frac{1}{9}\right)+10* \left(\frac{1}{12}\right)+11* \left(\frac{1}{18}\right)+12* \left(\frac{1}{36}\right) = 7.
+\end{split}
+\end{eqnarray}
+
+For $Y$ we could have the values in Table \ref{tab2}\\
+
+ \begin{table}[]\caption{Calculation of probabilities for the expected value of $Y$.}\label{tab2}
+\centering
+\begin{tabular}{| p{2cm} | c | c | c | c | c | c | c | c | c | c | c |}
+\hline
+$Y$ value & 0 & -1 & -2 & -3 & -4 & -5 & 1 & 2 & 3 & 4 & 5 \\
+\hline 
+Probabilities of each one & $\frac{1}{36}$& $\frac{5}{36}$& $\frac{4}{36}$& $\frac{3}{36}$& $\frac{2}{36}$& $\frac{1}{36}$& $\frac{5}{36}$& $\frac{4}{36}$& $\frac{3}{36}$& $\frac{2}{36}$& $\frac{1}{36}$\\
+\hline 
+Simplifying fractions& $\frac{1}{6}$& $\frac{5}{36}$& $\frac{1}{9}$& $\frac{1}{12}$& $\frac{1}{18}$& $\frac{1}{36}$& $\frac{5}{36}$& $\frac{1}{9}$& $\frac{1}{12}$& $\frac{1}{18}$& $\frac{1}{36}$\\
+\hline
+\end{tabular}
+\end{table}
+
+With these probabilities we calculate the expected value of $Y$ in Equation \ref{eq5},
+
+ \begin{eqnarray}
+\label{eq5}
+\begin{split}
+E(Y) = &0* \left(\frac{1}{6}\right) - 1* \left(\frac{5}{36}\right)-2* \left(\frac{1}{9}\right)-3* \left(\frac{1}{12}\right)-4* \left(\frac{1}{18}\right)-5* \left(\frac{1}{36}\right)+\\
+&1* \left(\frac{5}{36}\right)+2* \left(\frac{1}{9}\right)+3* \left(\frac{1}{12}\right)+4* \left(\frac{1}{18}\right)+5* \left(\frac{1}{36}\right) = 0.
+\end{split}
+\end{eqnarray}
+
+For the first part of the question, we need to show that $E(XY) = E(X)E(Y)$. We already have that $E(X)E(Y) = 0$, se we need to calculate the expected value of $E(XY)$. In Table \ref{tab3} we have the probabilities of all possible $E(XY)$.\\
+
+ \begin{table}[]\caption{Calculation of probabilities for the expected value of $XY$.}\label{tab3}
+\centering
+\begin{tabular}{| p{2cm} | c | c | c | c | c | c | c | c | c | c | c | c | }
+\hline
+$XY$ value & 0 & -3 & -8 & -15 &-24 & -35 & 3 & -5 & -12 & -21 & -32 & 8  \\
+\hline 
+Probabilities of each one & $\frac{6}{36}$& $\frac{1}{36}$& $\frac{1}{36}$& $\frac{1}{36}$& $\frac{1}{36}$& $\frac{1}{36}$& $\frac{1}{36}$& $\frac{1}{36}$& $\frac{1}{36}$& $\frac{1}{36}$& $\frac{1}{36}$& $\frac{1}{36}$\\
+\hline
+\hline
+$XY$ value & 5 & -7 & -16 & -27 &15 & 12 & 7 & -9 & -20 & 24 & 21 & 16  \\
+\hline 
+Probabilities of each one & $\frac{1}{36}$& $\frac{1}{36}$& $\frac{1}{36}$& $\frac{1}{36}$& $\frac{1}{36}$& $\frac{1}{36}$& $\frac{1}{36}$& $\frac{1}{36}$& $\frac{1}{36}$& $\frac{1}{36}$& $\frac{1}{36}$& $\frac{1}{36}$\\
+\hline
+\hline
+$XY$ value & 9 & -11 & 35 & 32 &27 & 20 & 11 &  &  &  &  &   \\
+\hline 
+Probabilities of each one & $\frac{1}{36}$& $\frac{1}{36}$& $\frac{1}{36}$& $\frac{1}{36}$& $\frac{1}{36}$& $\frac{1}{36}$& $\frac{1}{36}$& & & & & \\
+\hline
+\end{tabular}
+\end{table}
+
+
+ \begin{eqnarray}
+\label{eq6}
+\begin{split}
+E(XY) = &0* \left(\frac{6}{36}\right) -3* \left(\frac{1}{36}\right) -8* \left(\frac{1}{36}\right) -15* \left(\frac{1}{36}\right) -24* \left(\frac{1}{36}\right) -35* \left(\frac{1}{36}\right) +\\
+&3* \left(\frac{1}{36}\right) -5* \left(\frac{1}{36}\right) -12* \left(\frac{1}{36}\right) -21* \left(\frac{1}{36}\right) -32* \left(\frac{1}{36}\right) +8* \left(\frac{1}{36}\right) +\\
+&5* \left(\frac{1}{36}\right) -7* \left(\frac{1}{36}\right) -16* \left(\frac{1}{36}\right) -27* \left(\frac{1}{36}\right) +15* \left(\frac{1}{36}\right) +12* \left(\frac{1}{36}\right) +\\
+&7* \left(\frac{1}{36}\right) -9* \left(\frac{1}{36}\right) -20* \left(\frac{1}{36}\right) +24* \left(\frac{1}{36}\right) +21* \left(\frac{1}{36}\right) +16* \left(\frac{1}{36}\right) +\\
+&9* \left(\frac{1}{36}\right) -11* \left(\frac{1}{36}\right) +35* \left(\frac{1}{36}\right) +32* \left(\frac{1}{36}\right) +27* \left(\frac{1}{36}\right) +20* \left(\frac{1}{36}\right) +\\
+&11* \left(\frac{1}{36}\right)   = 0.
+\end{split}
+\end{eqnarray}
+
+So we can conclude now that $E(XY) = E(X)E(Y)$, because both equal 0.\\
+
+The second part of the question asks if $X$ and $Y$ are independent values. For this there is a theorem of independence in the book mentioned at the beginning \cite{grin} that says that \say{\textit{If $X$ and $Y$ are two random variables it is not true in general that $E(XY) = E(X)E(Y)$. However, this is true if $X$ and $Y$ are independent.}}.\\
+
+Since our $X$ and $Y$ are both random variables, and we just proved that $E(XY) = E(X)E(Y)$, we can conclude that our variables are independent.\\
+
+ 
+\begin{flushright}
+$\blacksquare$
+\end{flushright}
+
+
+\subsection{Exercise 15, page 249}
+
+A box contains two gold balls and three silver balls. You are allowed to choose successively from the box at random. You win 1 dollar each time you draw a gold ball and lose 1 dollar each time you draw a silver ball. After a draw, the ball is not replaced. Show that, if you draw until you are ahead by 1 dollar, or until there are no more gold balls, this is a favorable game.\\
+
+\begin{itemize}
+\item \textbf{Answer:}
+\end{itemize}
+
+Since the balls can not be replaced in this experiment, we can only draw 5 balls in a certain order. When we order all possible scenarios of this draws, we come up with:
+
+\begin{itemize}
+\item When we have the first draw being a gold ball, we have four scenarios in which we comply with the instruction of ending the game by being ahead 1 dollar. 
+\item When the draw of the first gold ball is in the second place, there is only one scenario in which we win 1 dollar, by drawing both gold balls, one when we end up with no winnings, but ends because we drew the two gold balls, and one last scenario, when we lose 1 dollar, because the last ball was gold.
+\item If the first gold ball is in the third place, we have one scenario when we have no winnings, and another when we lose 1 dollar.
+\item Lastly, if the first gold ball is in the fourth place, there is only one scenario where we lose 1 dollar.
+\end{itemize}
+
+Making a summary of this calculations, we have Table \ref{tab4}. There is only three options in output of winnings and loses. Either we win 1 dollar, we end up with nothing, or we lose 1 dollar.\\
+
+ \begin{table}[]\caption{Different options of outputs on the different scenarios}\label{tab4}
+\centering
+\begin{tabular}{| c | c | c | }
+\hline
+1 &0 & -1 \\
+\hline
+5 & 2 & 3 \\
+\hline
+\end{tabular}
+\end{table}
+
+So we have as an expected value Equation \ref{eq7}. All probabilities must sum up to 1, so we have all the probabilities multiplied by $\frac{1}{10}$. \\
+
+ \begin{eqnarray}
+\label{eq7}
+E(X) = 1* \left(\frac{5}{10}\right) + 0* \left(\frac{2}{10}\right) - 1* \left(\frac{3}{10}\right) = \frac{2}{10} = \frac{1}{5}
+\end{eqnarray}
+
+Since our expected value is positive, we can conclude that the second statement in the question, to wether it is a favorable game when there is no more gold balls, is correct. Another thing that can support this is, if we sum up the winnings with the neutral results, we have a $\frac{7}{10}$ of winnings versus $\frac{3}{10}$ probability of losses.\\
+
+\begin{flushright}
+$\blacksquare$
+\end{flushright}
+
+\subsection{Exercise 18, page 249}
+
+Exactly one of six similar keys opens a certain door. If you try the keys, one after another, what is the expected number of keys that you will have to try before success?\\
+
+\begin{itemize}
+\item \textbf{Answer:}
+\end{itemize}
+
+For this experiment, we need to first calculate the probability of the process of elimination of each key. The probability of finding the right key in:
+
+\begin{itemize}
+\item First draw = $\frac{1}{6}$
+\item Second draw = $\frac{5}{6} * \frac{1}{5}$ = $\frac{1}{6}$
+\item Third draw = $\frac{5}{6} *\frac{4}{5} *\frac{1}{4}$ = $\frac{1}{6}$
+\item Fourth draw = $\frac{5}{6}*\frac{4}{5}*\frac{3}{4}*\frac{1}{3}$ = $\frac{1}{6}$
+\item Fifth draw = $\frac{5}{6}*\frac{4}{5}*\frac{3}{4}*\frac{2}{3} * \frac{1}{2} $ = $\frac{1}{6}$
+\end{itemize}
+
+In the sixth draw is a certainty that we will draw the correct key, because there is no other one. For the expected value of this experiment we have Equation \ref{eq8}\\
+
+ \begin{eqnarray}
+\label{eq8}
+E(X) = 1* \left(\frac{1}{6}\right) +2* \left(\frac{1}{6}\right) +3* \left(\frac{1}{6}\right) +4* \left(\frac{1}{6}\right) +5* \left(\frac{1}{6}\right) = \frac{5}{2}
+\end{eqnarray}
+
+
+\begin{flushright}
+$\blacksquare$
+\end{flushright}
+
+\subsection{Exercise 19, page 249}
+
+A multiple choice exam is given. A problem has four possible answers, and exactly one answer is correct. The student is allowed to choose a subset of four possible answers as his answer. If his chosen subset contains the correct answer, the student receives three points, but he loses one point for each wrong answer in his chosen subset. Show that if he just guesses a subset uniformly and randomly his expected score is zero.\\
+
+\begin{itemize}
+\item \textbf{Answer:}
+\end{itemize}
+
+For this, the way we understand the problem is that the universe of choice are the 4 multiple answers. In this case, if our whole set contains 4 elements ($n=4$), then the number of subsets is $2^n = 16$. In Table \ref{tab5} we describe the winning and losing of points depending on the subset we are working on. In this experiment, we will pretend that the correct answer is 1.\\
+
+ \begin{table}[]\caption{Different options of outputs on the different scenarios}\label{tab5}
+\centering
+\begin{tabular}{| c | p{3cm} | p{9cm} | }
+\hline
+0 &\{ \} & Does not win points, so its value is 0 \\
+\hline
+1 & \{1\} \{2\} \{3\} \{4\}& We win 3 points $\frac{1}{4}$ and lose 1 point $\frac{3}{4}$ of the choices. \\
+\hline
+2 & \{1, 2\} \{1, 3\} \{1, 4\} \{2, 3\} \{2, 4\} \{3, 4\} & We win 3 points $\frac{3}{6}$ of the times, and $\frac{3}{6}$ we lose 1 point. \\
+\hline
+3 & \{1, 2, 3\} \{1, 2, 4\} \{2, 3, 4\} \{1, 3, 4\}& We win 1 point $\frac{3}{4}$ of the times, because of the 3 points, we need to extract 2 points for the wrong answers accompanying the right answer. And we loose 3 points $\frac{3}{4}$ of the times because of the three mistakes.  \\
+\hline
+4 & \{1, 2, 3, 4\} & We do not win any points because we have the 3 points for the right answer, but we have to extract 3 points for the wrong ones.  \\
+\hline
+\end{tabular}
+\end{table}
+
+If we calculate the expected value of each case in Table \ref{tab5} then we have Equations \ref{eq9}, \ref{eq10}, \ref{eq11}, \ref{eq12} and \ref{eq13}.\\
+
+ \begin{eqnarray}
+\label{eq9}
+E(X) = 0
+\end{eqnarray}
+
+ \begin{eqnarray}
+\label{eq10}
+E(X) = 3* \left(\frac{1}{4}\right) - 1* \left(\frac{3}{4}\right) = 0
+\end{eqnarray}
+
+ \begin{eqnarray}
+\label{eq11}
+E(X) = 2* \left(\frac{3}{6}\right) - 2* \left(\frac{3}{6}\right) = 0
+\end{eqnarray}
+
+ \begin{eqnarray}
+\label{eq12}
+E(X) = 1* \left(\frac{3}{4}\right) - 3* \left(\frac{1}{4}\right) = 0
+\end{eqnarray}
+
+ \begin{eqnarray}
+\label{eq13}
+E(X) = 3 - 3 = 0
+\end{eqnarray}
+ 
+ 
+ With this we prove that if we chose any of the subsets, we have an expected value of zero.\\
+ 
+\begin{flushright}
+$\blacksquare$
+\end{flushright}
+
+\subsection{Exercise 1, page 263}
+
+A number is chosen at random from the set $S = \{-1,0.1\}$. Let $X$ be the number chosen. Find the expected value, variance, and standard deviation of $X$.\\
+
+\begin{itemize}
+\item \textbf{Answer:}
+\end{itemize}
+
+For the expected value, we have a set of 3 elements, so each one has a probability of $\frac{1}{3}$. Our expected value is then shown in Equation \ref{eq14},
+
+ \begin{eqnarray}
+\label{eq14}
+E(X) = -1* \left(\frac{1}{3}\right)  + 0 * \left(\frac{1}{3}\right) + 1* \left(\frac{1}{3}\right) = 0
+\end{eqnarray}
+
+In the case of the variance, as a concept we have the variance as the expectation of the squared deviation of random variable from its mean. The formula for variance is in Equation \ref{eq15}
+
+ \begin{eqnarray}
+\label{eq15}
+V(X) = E[X^2] - E[X]^2 = -1^2* \left(\frac{1}{3}\right)  + 0^2 * \left(\frac{1}{3}\right) + 1^2* \left(\frac{1}{3}\right) - 0^2 = \frac{1}{3} + \frac{1}{3} = \frac{2}{3}
+\end{eqnarray}
+
+The concept of standard deviation is the measure of the amount of variation or dispersion of a set of values. The formula is on Equation \ref{eq16}
+
+ \begin{eqnarray}
+\label{eq16}
+D(X) = \sqrt{E[X^2] - E[X]^2} = \sqrt{-1^2* \left(\frac{1}{3}\right)  + 0^2 * \left(\frac{1}{3}\right) + 1^2* \left(\frac{1}{3}\right) - 0^2 }=\sqrt{ \frac{1}{3} + \frac{1}{3}} =\sqrt{ \frac{2}{3}}
+\end{eqnarray}
+
+
+\begin{flushright}
+$\blacksquare$
+\end{flushright}
+
+\subsection{Exercise 9, page 264}
+
+A die is loaded so that the probability of a face coming up is proportional to the number on that face. The die is rolled with outcome $X$. Find $V(X)$ and $D(X)$.\\
+
+\begin{itemize}
+\item \textbf{Answer:}
+\end{itemize}
+
+For this experiment, we need to first calculate the expected value of $X$. It says that the probability of each faace coming up is the number of the face. The sum of all probabilities must sum up to 1, so we can calculate probability $k$ as Equation \ref{eq17}
+
+ \begin{eqnarray}
+\label{eq17}
+\begin{split}
+(1, 2, 3, 4, 5, 6)& k = 1\\
+21&k = 1\\
+&k = \frac{1}{21}.
+\end{split}
+\end{eqnarray}
+
+We then calculate the expected value in Equation \ref{eq18}
+
+ \begin{eqnarray}
+\label{eq18}
+\begin{split}
+E(X) = 1* \left(\frac{1}{21}\right) + 2 * \left(\frac{2}{21}\right) + 3\left(\frac{3}{21}\right) +4\left(\frac{4}{21}\right) +5\left(\frac{5}{21}\right) +6\left(\frac{6}{21}\right) = 13
+\end{split}
+\end{eqnarray}
+
+With the expected value we can now calculate the variance in Equation \ref{eq19} and standard deviation in Equation \ref{eq20}.
+
+ \begin{eqnarray}
+\label{eq19}
+\begin{split}
+V(X) &= E(X^2) - E(X)^2 \\
+&= 1* \left(\frac{1}{21}\right) + 2 * \left(\frac{2}{21}\right) + 3*\left(\frac{3}{21}\right) +4*\left(\frac{4}{21}\right) +5*\left(\frac{5}{21}\right) +6*\left(\frac{6}{21}\right) - \left(\frac{13}{3}\right)^2\\
+& = 21 - \left(\frac{3}{21}\right)^2 = 21 - \left(\frac{169}{9}\right) = \frac{20}{9}
+\end{split}
+\end{eqnarray}
+
+ \begin{eqnarray}
+\label{eq20}
+\begin{split}
+D(X) = \sqrt{V(X)} = \sqrt{\frac{20}{9}} = \frac{2\sqrt{5}}{3}
+\end{split}
+\end{eqnarray}
+
+\begin{flushright}
+$\blacksquare$
+\end{flushright}
+
+
+\subsection{Exercise 12, page 264}
+
+Let $X$ be a random variable with $\mu = E(X)$ and $\sigma^2 = V(X)$. Define $X^* = (X - \mu)/ \sigma$. The random variable $X^*$ is called the standard random variable associated with $X$. Show that this standardized random variable has expected value of 0 and variance 1.\\
+
+\begin{itemize}
+\item \textbf{Answer:}
+\end{itemize}
+
+A standardized variable is sometimes called \texttt{Z-score} or standard score. Is a variable that has been rescaled to have a mean of 0 and a standard deviation of one. Using the properties of expectation that we are given in the problem, we have have Equation \ref{eq21},
+
+ \begin{eqnarray}
+\label{eq21}
+\begin{split}
+E(X^*) = E\left[\frac{X - \mu}{\sigma}\right] = \frac{1}{\sigma}[E(X) - \mu] = \frac{1}{\sigma} [\mu-\mu] =0
+\end{split}
+\end{eqnarray}
+ Then we calculate the variance in Equation \ref{eq22},
+ 
+  \begin{eqnarray}
+\label{eq22}
+\begin{split}
+V(X^{*2}) &= E(X^{*2}) - E(X^*)^2 = E\left[\left(\frac{X - \mu}{\sigma}\right)^2\right] - 0^2 \\
+& = \frac{1}{\sigma}^2 [E(X^{2}) - 2 \mu E(X) + \mu^2] \\
+&= \frac{1}{\sigma}^2 [E(X^{2}) - E^2(X) + E^2(X) - 2\mu E(X) + \mu^2]\\
+& = \frac{1}{\sigma}^2[V(X) + \mu^2 - 2\mu^2 + \mu^2]\\
+& = \frac{1}{\sigma}[\sigma^2 + 0] = 1.
+\end{split}
+\end{eqnarray}
+
+
+\begin{flushright}
+$\blacksquare$
+\end{flushright}
+
+
+\bibliographystyle{plainnat}
+\bibliography{tarea9}
+
+
+ 
+\end{document}
