@@ -80,7 +80,7 @@ showstringspaces=false}
 \begin{document}
 
 \title{%
-  Practice 9: Exercises of expected value and variance of random variables} %\\~\\
+  Practice 10: Simulations of expected value and variance of random variables} %\\~\\
   %\Large }
 \author{Mayra Cristina Berrones Reyes 6291}
 
@@ -254,7 +254,8 @@ For this experimentation, first we replicated the rules that the exercise dictat
 
 In Figure \ref{fig4} we have the graphical representation of the the experiment, in which we draw a different configuration 10,000 times. The problem asks us to prove that if we draw until we are ahead by one dollar or there are no more gold balls, that the resulting winnings are still a favorable game. In our analysis we concluded that, if we count as a favorable result when we end up without losses nor winnings, $\frac{7}{10}$ of the times, we end up with favorable results. \\
 
-In the experiment of 10,000 we have that 0.7059 of the times, we have a favorable result, proving our analysis correct.\\ 
+In the experiment of 10,000 we have that 0.7059 of the times, we have a favorable result, proving our analysis correct.\\
+ 
  \begin{table}[]\caption{Different resulting winnings on the different scenarios}\label{tb4}
 \centering
 \begin{tabular}{ r  r  r  r  r  r  r  }
@@ -299,7 +300,7 @@ Exactly one of six similar keys opens a certain door. If you try the keys, one a
 
 
 \begin{itemize}
-\item \textbf{Experiment:}
+\item \textbf{Experimentation:}
 \end{itemize}
 
 For this exercise, we used again the library of \texttt{sample}. We selected at random a number between 1 and 6, for a 10,000 repetitions. This number was the correct key. We then checked how many tries it took to find the right key. All these tries where saved in another variable. Using the \texttt{mean} option in \texttt{R} we calculated a mean of 2.4849. \\
@@ -326,6 +327,39 @@ In Figure \ref{sb5-1} we have the box plot of one iteration of 10,000 repetition
 \begin{flushright}
 $\blacksquare$
 \end{flushright}
+
+
+\subsection{Exercise 27, page 252 (Extra)}
+ 
+ It has been said that a Dr. B. Muriel declined a cup of tea stating that she preferred a cup into which milk had been poured first. The famous statician R. A. Fisher carried out an experiment to see if she could tell whether milk was poured in before or after the tea. Assume that for the test Dr. Bristol was given 8 cups of tea, four in which the milk had been poured before the tea, and four in which the milk was put in after the tea.\\
+ 
+ a) What is the expected number of correct guesses the lady would make if she had no information after each test and was just guessing.
+ 
+ 
+ \begin{itemize}
+\item \textbf{Experimentation:}
+\end{itemize}
+
+This is just half of the experimentation, because since Practice 9 I started with some of the analysis of this problem, and I found it kind of funny that these staticians had such an important discovery in probability from an argument about how much do they know of tea. In this case, after some investigation, we found out that Fisher, the one who posed the argument, was so adamant to show that he was right, that he calculated how many cups of tea could Muriel guess correctly if she was in fact just guessing. The proposed hypothesis then was that if she managed to guess all 8, then she indeed must know something about the taste of the tea composition.\\
+
+For this experimentation, we used the \texttt{dhyper} function in \texttt{R} to fill all the information we had about the problem. In this case, we discovered that the chance of Dr. B. Muriel to guess all 8 of them correctly if she was just guessing, was of \textbf{0.013}. In Figure \ref{fig9} we can see the declining probability if the experiment where to continue. After the 14 cup, the probability becomes 0.\\
+
+As a conclusion to this problem, I say that if she managed to guess correctly all of the cups, then she must really know something about the tea. \\
+
+\begin{figure}[]
+  \centering
+  \includegraphics[width=.9\linewidth]{Rplot07.png}  
+	\caption{Graphic representation of the diminishing probability of guessing correctly different number of cups }
+\label{fig9}
+\end{figure}
+
+\begin{flushright}
+$\blacksquare$
+\end{flushright}
+
+\section{Conclusion}
+
+In this practice, it was easier to develop the experimentation, because we already had the outcome in mind. As a side note, the last extra experiment was a fun conversation in dinner with my family, because now my mother claims she can tell the same difference but with coffee.\\
 
 \bibliographystyle{plainnat}
 \bibliography{tarea10}
