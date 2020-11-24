@@ -12,4 +12,12 @@
 
 [Tarea 6](https://github.com/mayraberrones94/Probabilidad/blob/master/Tarea_6/Tarea6.pdf)
 
-[Tarea 6](https://github.com/mayraberrones94/Probabilidad/blob/master/Tarea_7/Tarea7.pdf)
+[Tarea 7](https://github.com/mayraberrones94/Probabilidad/blob/master/Tarea_7/Tarea7.pdf)
+
+[Tarea 8](https://github.com/mayraberrones94/Probabilidad/blob/master/Tarea_8/Tarea8.pdf)
+
+[Tarea 9](https://github.com/mayraberrones94/Probabilidad/blob/master/Tarea_9/Tarea9.pdf)
+
+[Tarea 10](https://github.com/mayraberrones94/Probabilidad/blob/master/Tarea_10/Tarea10.pdf)
+
+[Tarea 11](https://github.com/mayraberrones94/Probabilidad/blob/master/Tarea_11/Tarea11.pdf)
