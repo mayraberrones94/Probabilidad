@@ -1,0 +1,404 @@
+\documentclass{article}   
+
+\usepackage{geometry}
+\usepackage{qtree}
+\usepackage[square,numbers]{natbib}
+% \usepackage{cite}  
+\geometry{a4paper}
+
+\usepackage[]{algorithm2e}
+\usepackage{amsthm}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}{Corollary}[theorem]
+\newtheorem{lemma}[theorem]{Lemma}
+\usepackage{rotating}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}    % use 8-bit T1 fonts
+\usepackage{lmodern}
+\usepackage{hyperref}       % hyperlinks
+\usepackage{lipsum}
+
+\usepackage{color, colortbl}
+
+\definecolor{Gray}{gray}{0.9}
+
+\usepackage[protrusion=true,expansion=true]{microtype}
+
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{eqnarray,amsmath}
+\usepackage[table]{xcolor}
+
+\usepackage{listings}
+\usepackage{graphicx}
+\usepackage{dirtytalk}
+
+\usepackage{rotating}
+\usepackage{caption}
+
+%% if you use PostScript figures in your article
+%% use the graphics package for simple commands
+\usepackage{graphics}
+
+
+%% or use the graphicx package for more complicated commands
+\usepackage{graphicx}
+\usepackage[table]{xcolor}
+
+\usepackage{indentfirst}
+\usepackage[utf8]{inputenc}
+ \usepackage{subcaption}
+\usepackage{xcolor}
+ 
+\usepackage{xspace,color}
+\usepackage{url}
+
+\usepackage[shortlabels]{enumitem}
+
+
+
+\lstset{commentstyle=\color{red},keywordstyle=\color{black},
+showstringspaces=false}
+\lstnewenvironment{rc}[1][]{\lstset{language=R}}{}
+\newcommand{\ri}[1]{\lstinline{#1}}  %% Short for 'R inline'
+
+\lstset{language=R}             % Set R to default language
+
+
+%https://tex.stackexchange.com/questions/96825/nicely-formatted-where-statement-for-maths
+ \newenvironment{where}{\noindent{}where\begin{itemize}}{\end{itemize}}
+ \renewcommand*\descriptionlabel[1]{\hspace\leftmargin$#1$}
+ 
+\lstset{escapeinside={<@}{@>}}
+% please place your own definitions here and don't use \def but
+% \newcommand{}{}
+%
+% Insert the name of "your journal" with
+% \journalname{myjournal}
+%
+\begin{document}
+
+\title{%
+  Practice 12: Exercises of generating functions} %\\~\\
+  %\Large }
+\author{Mayra Cristina Berrones Reyes 6291}
+
+\maketitle
+
+\section{Exercises}
+
+The exercises of this work where taken from the complementary reading in section \cite{grin} of the class materials.
+
+\subsection{Exercise 1, page 393}
+
+Let $Z_1, Z_2, ..., Z_N$ describe a branching process in which each parent has j offspring with probability $p_j$. Find the probability $d$ that the process eventually dies out if:
+
+\begin{enumerate}[(a)]
+\item $p_0=\frac{1}{2}, p_1 = \frac{1}{4}$ and $p_2 = \frac{1}{4}$.
+\item $p_0=\frac{1}{3}, p_1 = \frac{1}{3}$ and $p_2 = \frac{1}{3}$.
+\item $p_0=\frac{1}{3}, p_1 = 0$ and $p_2 = \frac{2}{3}$.
+\item $p_j = \frac{1}{2}^{j+1}$ for $j = 0, 1, 2, ...$.
+\item $p_j = \left(\frac{1}{3}\right)\left(\frac{2}{3}\right)^{j}$ for $j = 0, 1, 2, ...$.
+\item $p_j = e^{-2}\frac{2^j}{j!}$ for $j = 0, 1, 2, ...$ (estimate $j$ numerically).
+\end{enumerate}
+
+\begin{itemize}
+\item \textbf{Answer:}
+\end{itemize}
+
+\begin{enumerate}[(a)]
+\item $p_0=\frac{1}{2}, p_1 = \frac{1}{4}$ and $p_2 = \frac{1}{4}$. 
+\end{enumerate}
+Taking into consideration the example form the complementary material, we have that if $p_0 > p_2$ then $m<1$, then we have a second root that is $> 1$ For this item, we have $p_0 = \frac{1}{2}$ and $p_2 = \frac{1}{4}$, so we can say that in this case that $m < 1$ and the second root is $> 1$.
+
+\begin{enumerate}[(b)]
+\item $p_0=\frac{1}{3}, p_1 = \frac{1}{3}$ and $p_2 = \frac{1}{3}$.
+\end{enumerate}
+In this item we have that $p_0 = p_2$. For this case we say that we have a double root, where $d =1$.
+
+\begin{enumerate}[(c)]
+\item $p_0=\frac{1}{3}, p_1 = 0$ and $p_2 = \frac{2}{3}$.
+\end{enumerate}
+For this case, we have take the same concept that we used in item (a), whew we compare $p_0$ and $p_2$. In this item, $p_0 < p_2$, which means that $m >1$, so the second root here represents that $d$ is \textbf{less than 1} as the probability of that the process will die out.
+
+\begin{enumerate}[(d)]
+\item $p_j = \frac{1}{2}^{j+1}$ for $j = 0, 1, 2, ...$.
+\end{enumerate}
+
+For the following items, we have a different format, in which $j$ represents the number of probabilities we have. In these cases we also relied on \texttt{R} as a calculator to see to which number it converges. In this case, it goes to 1. We also did the same thing as item (a), comparing $p_0$ and $p_2$, and we got that $p_0 > p_2$, so our $m < 1$ and the second root is $> 1$.
+
+\begin{enumerate}[(e)]
+\item $p_j = \left(\frac{1}{3}\right)\left(\frac{2}{3}\right)^{j}$ for $j = 0, 1, 2, ...$.
+\end{enumerate}
+
+This one was kind of confusing, because when we did the experimentation in \texttt{R} the number it converges is 2. But if we make the same experiment that we have been doing for all of the items before, we get that $p_0 > p_2$, so our $m<1$ and the second root is $> 1$.
+
+\begin{enumerate}[(f)]
+\item $p_j = e^{-2}\frac{2^j}{j!}$ for $j = 0, 1, 2, ...$ (estimate $j$ numerically).
+\end{enumerate}
+We mentioned that item (e) was confusing because this experiment also converges to 2, but in this case the value is $p_0 < p_2$, which means that $m >1$, so the second root here represents that $d$ is \textbf{less than 1}.
+
+\begin{flushright}
+$\blacksquare$
+\end{flushright}
+
+\subsection{Exercise 3, page 393}
+
+In the chain letter problem (see Example 10.14) find your expected profit if: 
+
+\begin{enumerate}[(a)]
+\item $p_0=\frac{1}{2}, p_1 = 0$ and $p_2 = \frac{1}{2}$.
+\item $p_0=\frac{1}{6}, p_1 = \frac{1}{2}$ and $p_2 = \frac{1}{3}$.
+\end{enumerate}
+
+\begin{itemize}
+\item \textbf{Answer:}
+\end{itemize}
+
+\begin{enumerate}[(a)]
+\item $p_0=\frac{1}{2}, p_1 = 0$ and $p_2 = \frac{1}{2}$.
+\end{enumerate}
+
+Reading the example 10.14, we follow the same steps and rules they tell us. For instance, we know that $m = p_1 + 2p_2$ is the expected number of letters that we sold. Then we follow the calculation of $50m + 50m^{12} > 100$ or if $m * m^{12} > 2$ to know if our profit is favorable. So, for the experiment in item (a) we have in Equation \ref{eq1}:
+
+ \begin{eqnarray}
+\label{eq1}
+m = p_1 + 2p_2 = 0 + 2\left(\frac{1}{2}\right) = 1
+\end{eqnarray}
+
+With the results in Equation \ref{eq1} we have that $m * m^{12} = 2$. Since our formula is a strict $>$, then we expect not to have profit in this one. Doing the calculation we have $50(2) - 100 = 0$, proving our first assumption.
+
+\begin{enumerate}[(b)]
+\item $p_0=\frac{1}{6}, p_1 = \frac{1}{2}$ and $p_2 = \frac{1}{3}$.
+\end{enumerate}
+
+For this one we repeat the procedure we made in item (a). So, we have the result of $m$ in Equation \ref{eq2}:
+ \begin{eqnarray}
+\label{eq2}
+m = p_1 + 2p_2 = \frac{1}{2} + 2\left(\frac{1}{3}\right) = \frac{7}{6} 
+\end{eqnarray}
+With the results in Equation \ref{eq2} we have that $m * m^{12} = 7.5252$. With this result, we have that $m * m^{12} > 2$, so we do expect to be having some profit. Doing the calculation we have $50(7.5252) - 100 \approx 276$, proving our assumption.\\
+
+\begin{itemize}
+\item Show that if $p_0 > \frac{1}{2}$, you cannot expect to make a profit.
+\end{itemize}
+For this last one, we can deduce from the item (a) where we had no profit, that if $p_0$ goes any higher than $\frac{1}{2}$, then the value of $m$ will be smaller, making the final calculation have negative numbers. To prove this, we played with the value of $p_0$, making it as closer to $\frac{1}{2}$ but always slightly higher. The value of $m$ does not get to be 1 in any of them. This is done, of course, with the assumption that the sum off all $p$ is equal to 1.\\
+
+\begin{flushright}
+$\blacksquare$
+\end{flushright}
+
+
+\subsection{Exercise 1, page 402}
+
+Let $X$ be a continuous random variable with values in [$0, 2$] and density $f_X$. Find the moment generating function $g(t)$ for $X$ if:
+
+\begin{enumerate}[(a)]
+\item $f_X (x) = \frac{1}{2}$.
+\item $f_X (x) = \left(\frac{1}{2}\right)x$.
+\item $f_X (x) = 1 -  \left(\frac{1}{2}\right)x$.
+\item $f_X (x) = \lvert 1 - x \rvert$.
+\item $f_X (x) = \left(\frac{3}{8}\right)x^2$.
+\end{enumerate}
+ \textit{Hint:} Use the integral definition, as in Examples 10.15 and 10.16.
+
+\begin{itemize}
+\item \textbf{Answer:}
+\end{itemize}
+
+
+
+\begin{enumerate}[(a)]
+\item $f_X (x) = \frac{1}{2}$.
+\end{enumerate}
+
+\begin{eqnarray}
+\label{eq3}
+\begin{split}
+g(t)=& \int_0^{2} \frac{1}{2}e^{tx}dx = \frac{1}{2}\int_0^2 e^{tx}dx\\
+= & \frac{1}{2} \left[ \frac{e^{tx}}{t} \right]_0^2 = \frac{1}{2} \left(\frac{e^{2t} - e^{0t}}{t}\right)\\
+= & \frac{e^{2t} - 1}{2t}.
+\end{split}
+\end{eqnarray}
+
+
+\begin{enumerate}[(b)]
+\item $f_X (x) = \left(\frac{1}{2}\right)x$.
+\end{enumerate}
+
+\begin{eqnarray}
+\label{eq4}
+\begin{split}
+g(t)=& \int_0^{2} \frac{1}{2}xe^{tx}dx = \frac{1}{2}\int_0^2 xe^{tx}dx\\
+u =& x \qquad v = \frac{e^{tx}}{t}\\
+du = & 1dx \qquad dv = e^{tx}dx\\
+= & \int_0^2 xe^{tx}dx = \frac{xe^{tx}}{t} \Bigr \rvert_0^2- \int_0^2 \frac{e^{tx}}{t}dx\\
+= & \int_o^2 xe^{tx}dx = \frac{xe^{tx}}{t} \Bigr \rvert_0^2 - \frac{e^{tx}}{t^2} \Bigr \rvert_0^2\\
+= & \frac{2e^{2t}}{t} - \frac{e^{2t} -1}{t^2}\\
+\therefore g(t) = & \frac{1}{2} \left( \frac{2e^{2t}}{t} - \frac{e^{2t}-1}{t^2} \right).
+\end{split}
+\end{eqnarray}
+
+
+\begin{enumerate}[(c)]
+\item $f_X (x) = 1 -  \left(\frac{1}{2}\right)x$.
+\end{enumerate}
+
+\begin{eqnarray}
+\label{eq5}
+\begin{split}
+g(t) = & \int_0^2 \left( 1 - \frac{1}{2} x \right) e^{tx}dx \\
+= & \int_0^2 e^{tx} dx - \frac{1}{2}\int_0^2 xe^{tx}dx\\
+= & \int_0^2 e^{tx}dx = \frac{e^{tx}}{t}\Bigr \rvert_0^2 = \frac{e^{2t}-1}{t}\\
+g(t) =& \frac{e^{2t}-1}{t} - \frac{1}{2} \left(\frac{2e^{2t}}{t} - \frac{e^{2t}-1}{t^2} \right)\\
+= & \frac{e^{2t}- 1}{2t^2} - \frac{1}{t}.
+\end{split}
+\end{eqnarray}
+
+\begin{enumerate}[(d)]
+\item $f_X (x) = \lvert 1 - x \rvert$.
+\end{enumerate}
+
+\begin{enumerate}[(e)]
+\item $f_X (x) = \left(\frac{3}{8}\right)x^2$.
+\end{enumerate}
+
+\begin{eqnarray}
+\label{eq7}
+\begin{split}
+g(t) = & \int_0^2 \frac{3}{8} x^2 e^{tx} dx = \frac{3}{8} \int_0^2 x^2 e^{tx}dx \\
+u =& x^2 \qquad v = \frac{e^{tx}}{t}\\
+du = & 2xdx \qquad dv = e^{tx}dx\\
+= & \int_0^2 x^2e^{tx}dx = \frac{x^2 e^{tx}}{t} \Bigr \rvert_0^2- \int_0^2 \frac{2xe^{tx}}{t}dx\\
+= & \frac{x^2e^{tx}}{t} \Bigr \rvert_0^2 - \frac{2}{t} \int_0^2 xe^{tx}dx\\
+= & \frac{4e^{2t}}{t} - \frac{2}{t} \left( \frac{2e^{2t}}{t} - \frac{e^{2t}-1}{t^2}\right).
+\end{split}
+\end{eqnarray}
+
+\begin{flushright}
+$\blacksquare$
+\end{flushright}
+
+\subsection{Exercise 6, page 403}
+
+Let $X$ be a continuous random variable whose characteristic function $k_X (\tau) $ is:
+
+ \begin{eqnarray*}
+\label{equation1}
+k_x(\tau) = e^{-\lvert\tau\rvert}, \: -\infty < \tau < +\infty.
+\end{eqnarray*}
+
+Show directly that density $f_X$ of $X$ is:
+
+ \begin{eqnarray*}
+\label{equation2}
+f_X(x) = \frac{1}{\pi (1+x^2)}.
+\end{eqnarray*}
+
+
+\begin{itemize}
+\item \textbf{Answer:}
+\end{itemize}
+
+For this we have the start of this equation from the recommended reading, and we begin by replacing the $k_x(\tau) = e^{-\lvert\tau\rvert}$ value . In Equation \ref{eqcauchi} we can see how it develops to the formula of the Cauchy density.\\
+
+\begin{eqnarray}
+\label{eqcauchi}
+\begin{split}
+f_X(x) = &\frac{1}{2\pi} \int_{-\infty}^{\infty} e^{-ix\tau} e^{-\lvert\tau\rvert} d\tau \\
+= & \frac{1}{2\pi} \left( \int_{-\infty}^{0}e^{-ix\tau} e^-{-\tau} d\tau + \int_{\infty}^{0}e^{-ix\tau} e^{-\tau} d\tau \right)
+= \frac{1}{2\pi} \left( \int_{-\infty}^{0} e^{-ix\tau+\tau} d\tau + \int_{\infty}^{0} e^{-ix\tau-\tau} d\tau \right)\\
+= & \frac{1}{2\pi} \left( \int_{-\infty}^{0} e^{\tau(1-i\tau)}d\tau + \int_{\infty}^{0} e^{-\tau(1 + ix)}d\tau\right)
+= \frac{1}{2\pi} \left( \left(\frac{e^{\tau(1-ix)}}{(1-ix)}\right) \Bigr \rvert_{-\infty}^0  + \left( - \frac{e^{-t(1 + ix)}}{(1 + ix)} \right) \Bigr \rvert_{0}^{-\infty}\right)\\
+= & \frac{1}{2\pi} \left( \left( \frac{e^{0(1-ix)}}{(1-ix)} - \frac{e^{-\infty(1-ix)}}{(1-ix)} \right ) - \left( \frac{e^{-\infty(1 + ix)}}{(1 + ix)} \frac{e^{0(1 + ix)}}{(1 + ix)} \right) \right)
+= \frac{1}{2\pi} \left( \frac{1}{(1-ix)} + \frac{1}{(1 + ix)} \right)\\
+= & \frac{1}{2\pi} \left( \frac{(1 + ix) +  (1 - ix)}{(ix + 1 - (ix)^2) - ix} \right)
+=\frac{1}{2\pi} \left( \frac{2}{(1-(ix^2))} \right) = \frac{1}{\pi} \left( \frac{1}{(1- (-x^2))} \right)\\
+= & \frac{1}{\pi(1+x^2)}
+\end{split}
+\end{eqnarray}
+\begin{flushright}
+$\blacksquare$
+\end{flushright}
+
+\subsection{Exercise 10, page 404}
+
+Let $X_1, X_2, ... , X_n$ be an independent trials process with density:
+
+ \begin{eqnarray*}
+\label{equation3}
+f(x) = \frac{1}{2} e^{-\lvert x \rvert}, \: -\infty < x < + \infty.
+\end{eqnarray*}
+
+\begin{enumerate}[(a)]
+\item Find mean and variance of $f(x)$.
+\item Find the moment generating function fo $X_1, S_n, A_n, $ and $S^{*}_n$.
+\item What can you say about the moment generating function of $S^{*}_n$ as $n \rightarrow \infty$.
+\item What can you say about the moment generating function of $A_n$ as $n \rightarrow \infty$.
+\end{enumerate}
+
+
+\begin{itemize}
+\item \textbf{Answer:}
+\end{itemize}
+
+\begin{enumerate}[(a)]
+\item Find mean and variance of $f(x)$.
+\end{enumerate}
+
+For this item (a) we can say that the mean is zero by symmetry. A symmetric probability distribution is a probability distribution which is unchanged when its probability density function is reflected around a vertical line at some value of the random variable represented by the distribution. This probability of being any given distance on one side of the value about which symmetry occurs is the same as the probability of being the same distance on the other side of that value \cite{wiki}. Since we have $ -\infty < x < + \infty $ we can assume this is the case. \\
+
+The variance can be obtained by integrating $X^2$ multiplied by the density, which can be performed as an integral performed using integration by parts (to accommodate the different limits and the absolute value of the exponent $x$).
+
+\begin{eqnarray}
+\label{eq9}
+\begin{split}
+&\int_{-\infty}^0 x^2 \frac{e^x}{2}dx + \int_0^{\infty} x^2 \frac{e^{-x}}{2}dx\\
+&\int_{-\infty}^0 x^2 \frac{e^x}{2}dx = 1\\
+=& 1 + \int_0^{\infty} x^2 \frac{e^{-x}}{2}dx =  1 + 1 = 2. 
+\end{split}
+\end{eqnarray}
+
+\begin{enumerate}[(b)]
+\item Find the moment generating function fo $X_1, S_n, A_n, $ and $S^{*}_n$.
+\end{enumerate}
+
+\begin{enumerate}[(c)]
+\item What can you say about the moment generating function of $S^{*}_n$ as $n \rightarrow \infty$.
+\end{enumerate}
+
+For this, the answer kind of comes from the recommended reading. In Equation \ref{eq10} we have the reference, to the standardized sum $S_n^*$ generated function. 
+
+\begin{eqnarray}
+\label{eq10}
+\begin{split}
+g_n^*(t) = \left( g \left( \frac{t}{\sqrt{n}} \right) \right)^2
+\end{split}
+\end{eqnarray}
+
+From that, using the L\' Hopital rule twice, we have that $g_n^*(t) \rightarrow e^{\frac{t^2}{2}}$ as $n \rightarrow \infty$. This rule tells us that the $S_n^*$ generated function must converge to that distribution function of $e^{\frac{t^2}{2}}$.
+
+
+\begin{enumerate}[(d)]
+\item What can you say about the moment generating function of $A_n$ as $n \rightarrow \infty$.
+\end{enumerate}
+
+In this one, seeing the Equation \ref{eq11} taken from the book notes, we think it converges to 1. They are taking an average for all the numbers, and, following the process of Exercise 1 in this work, the numbers can keep getting smaller and smaller, but as $n$ tends to infinity, then my guess is that in some point it is going to converge to 1.
+
+\begin{eqnarray}
+\label{eq11}
+\begin{split}
+A_n = \frac{X_1 + X_2 + ... + X_n}{n}
+\end{split}
+\end{eqnarray}
+
+\begin{flushright}
+$\blacksquare$
+\end{flushright}
+
+\bibliographystyle{plainnat}
+\bibliography{tarea12}
+
+
+ 
+\end{document}
