@@ -21,3 +21,9 @@
 [Tarea 10](https://github.com/mayraberrones94/Probabilidad/blob/master/Tarea_10/Tarea10.pdf)
 
 [Tarea 11](https://github.com/mayraberrones94/Probabilidad/blob/master/Tarea_11/Tarea11.pdf)
+
+[Tarea 12](https://github.com/mayraberrones94/Probabilidad/blob/master/Tarea_12/Tarea12.pdf)
+
+[Tarea 13](https://github.com/mayraberrones94/Probabilidad/blob/master/Tarea_13/Tarea13.pdf)
+
+[Tarea 14](https://github.com/mayraberrones94/Probabilidad/blob/master/Tarea_14/Tarea14.pdf)
