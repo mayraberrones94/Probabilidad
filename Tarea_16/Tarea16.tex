@@ -1,0 +1,148 @@
+\documentclass{article}   
+
+\usepackage{geometry}
+\usepackage{qtree}
+\usepackage[square,numbers]{natbib}
+% \usepackage{cite}  
+\geometry{a4paper}
+
+\usepackage[]{algorithm2e}
+\usepackage{amsthm}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}{Corollary}[theorem]
+\newtheorem{example}{Example}
+\newtheorem{lemma}[theorem]{Lemma}
+\usepackage{rotating}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}    % use 8-bit T1 fonts
+\usepackage{lmodern}
+\usepackage{hyperref}       % hyperlinks
+\usepackage{lipsum}
+
+%\usepackage[dvipsnames]{xcolor}
+\usepackage{color, colortbl}
+
+\definecolor{Gray}{gray}{0.9}
+\definecolor{goldenpoppy}{rgb}{0.99, 0.76, 0.0}
+\definecolor{goldenrod}{rgb}{0.85, 0.65, 0.13}
+
+\usepackage[protrusion=true,expansion=true]{microtype}
+
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{booktabs}
+\usepackage{eqnarray,amsmath}
+\usepackage[table]{xcolor}
+
+\usepackage{listings}
+\usepackage{dirtytalk}
+
+\usepackage{rotating}
+\usepackage{caption}
+
+%% if you use PostScript figures in your article
+%% use the graphics package for simple commands
+\usepackage{graphics}
+
+
+%% or use the graphicx package for more complicated commands
+\usepackage{graphicx}
+
+
+\usepackage{indentfirst}
+\usepackage[utf8]{inputenc}
+ \usepackage{subcaption}
+
+ 
+\usepackage{xspace,color}
+\usepackage{url}
+
+\usepackage[export]{adjustbox}
+
+\usepackage{listings}
+\usepackage{xcolor}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+
+\lstset{style=mystyle}
+
+\newcommand{\ri}[1]{\lstinline{#1}}  %% Short for 'R inline'
+
+\lstset{language=R}             % Set R to default language
+
+
+%https://tex.stackexchange.com/questions/96825/nicely-formatted-where-statement-for-maths
+ \newenvironment{where}{\noindent{}where\begin{itemize}}{\end{itemize}}
+ \renewcommand*\descriptionlabel[1]{\hspace\leftmargin$#1$}
+ 
+ %\newtheorem{theorem}{Theorem}[section]
+%\newtheorem{corollary}{Corollary}[theorem]
+%\newtheorem{lemma}[theorem]{Lemma}
+
+
+\lstset{escapeinside={<@}{@>}}
+% please place your own definitions here and don't use \def but
+% \newcommand{}{}
+%
+% Insert the name of "your journal" with
+% \journalname{myjournal}
+%
+\begin{document}
+
+\title{%
+  Practice 16: Reviews of my classmates. } %\\~\\
+  %\Large }
+\author{Mayra Cristina Berrones Reyes 6291}
+
+\maketitle
+
+\section{Alberto M.}
+
+\textit{Inferencia y estad\'isticas bayesianas para la imputaci\'on de datos en datasets
+Los datos faltantes son problemas muy comunes encontrados en los datasets de la vida real, estos pueden perturbar el an\'alisis de datos dado que disminuyen el tamano de las muestras y en consecuencia la potencia de las pruebas de contraste de hip\'otesis, adem\'as hace que no se puedan utilizar directamente t\'ecnicas y modelos de machine learning, deep learning. Los anterior nos lleva a la necesidad de rellenar o imputar datos en \textit{datasets}, existen diversas t\'ecnicas para lograr este objetivo como la sustituci\'on por la media, la sustituci\'on por constante, imputaci\'on por regresi\'on, entre otras. Dichas t\'ecnicas tienen ciertas deficiencias, por lo que en este trabajo se utilizar\'a la estad\'istica inferencial y bayesiana para la imputaci\'on flexible de datos faltantes en algunos datasets.} \\
+
+
+(Mayra) Este trabajo tambi\'en me parece bastante interesante. Como mencionas, la parte de rellenar datos faltantes es muy importante cuando estas trabajando temas de miner\'ia de datos, sobre todo cuando la indicaci\'on general para tratar con datos faltantes es trabajar alrededor del problema o de plano eliminarlos de tu investigaci\'on. Me gustaría bastante ver que t\'ecnicas encuentras para poder subsanar este problema. Un pequeno detalle es nada mas el uso que le das a la palabra de Imputaci\'on. La palabra rellenar creo que se entiende perfectamente. Imputaci\'on se refiere a algo m\'as como dar la culpa de algo. No se si quer\'ias usar m\'as o menos ese significado. \\
+
+\section{Palafox.}
+
+\textit{Networks arise in many scientific and technological fields [Newman, 2018]. The internet, social networks, electrical net- works, are among many available examples. To study network processes, sometimes it is convenient to have a model which preserves the essential characteristics of the network. A random graph is a model network in which the values of certain properties are fixed, but the network is in other respects random [Newman, 2018]. For example, a number n nodes and m edges could be fixed, but edges between any two nodes placed at random. The aim of this project is to do a theoretical and computational study of random graphs, and analyze how closely some of these resemble real world networks [Leskovec and Krevl, 2014].}\\
+
+(Mayra) La teor\'ia de gr\'afos es un tema que en lo personal me parece bastante interesante. Entiendo el enfoque que le quieres dar al final a tu tema, que es explicar de manera te\'orica el comportamiento de los gr\'afos. Pero si estar\'ia super interesante si, en caso de hacer este es el trabajo que quieras desarrollar, intentes con datos reales. Si no me equivoco, escuchamos algo de esto en una conferencia acerca de las redes el\'ectricas. Tambi\'en hay algunas aplicaciones en el area de transporte.\\
+
+
+
+
+\section{Gabriela.}
+
+\textit{Comparación de soluciones: Como parte del trabajo de tesis se tienen datos sobre las soluciones obtenidas con dos formulaciones diferentes, se desea analizar dichas soluciones para verificar si hay diferencias significativas entre ambas. Como primera instancia se pretende usar estad\'istica descriptiva y despu\'es verificar con pruebas de hip\'otesis que sean aplicables
+a los datos.}\\
+
+(Mayra) Esto es porque conozco tu tema, y si me gustar\'ia bastante ver la diferencia que hay entre los dos modelos que tienes. Lo que no me queda muy claro es la parte en donde describes la primera instancia que vas a utilizar en tu experimento. Entiendo la parte en que vas a realizar estad\'istica descriptiva. Lo dem\'as me gustar\'ia escucharte explicarlo.\\
+
+
+
+ 
+\end{document}
