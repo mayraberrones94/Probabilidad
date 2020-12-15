@@ -27,3 +27,7 @@
 [Tarea 13](https://github.com/mayraberrones94/Probabilidad/blob/master/Tarea_13/Tarea13.pdf)
 
 [Tarea 14](https://github.com/mayraberrones94/Probabilidad/blob/master/Tarea_14/Tarea14.pdf)
+
+[Tarea 15](https://github.com/mayraberrones94/Probabilidad/blob/master/Tarea_15/Tarea15.pdf)
+
+

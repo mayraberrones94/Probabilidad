@@ -1,0 +1,151 @@
+\documentclass{article}   
+
+\usepackage{geometry}
+\usepackage{qtree}
+\usepackage[square,numbers]{natbib}
+% \usepackage{cite}  
+\geometry{a4paper}
+
+\usepackage[]{algorithm2e}
+\usepackage{amsthm}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}{Corollary}[theorem]
+\newtheorem{example}{Example}
+\newtheorem{lemma}[theorem]{Lemma}
+\usepackage{rotating}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}    % use 8-bit T1 fonts
+\usepackage{lmodern}
+\usepackage{hyperref}       % hyperlinks
+\usepackage{lipsum}
+
+%\usepackage[dvipsnames]{xcolor}
+\usepackage{color, colortbl}
+
+\definecolor{Gray}{gray}{0.9}
+\definecolor{goldenpoppy}{rgb}{0.99, 0.76, 0.0}
+\definecolor{goldenrod}{rgb}{0.85, 0.65, 0.13}
+
+\usepackage[protrusion=true,expansion=true]{microtype}
+
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{booktabs}
+\usepackage{eqnarray,amsmath}
+\usepackage[table]{xcolor}
+
+\usepackage{listings}
+\usepackage{dirtytalk}
+
+\usepackage{rotating}
+\usepackage{caption}
+
+%% if you use PostScript figures in your article
+%% use the graphics package for simple commands
+\usepackage{graphics}
+
+
+%% or use the graphicx package for more complicated commands
+\usepackage{graphicx}
+
+
+\usepackage{indentfirst}
+\usepackage[utf8]{inputenc}
+ \usepackage{subcaption}
+
+ 
+\usepackage{xspace,color}
+\usepackage{url}
+
+\usepackage[export]{adjustbox}
+
+\usepackage{listings}
+\usepackage{xcolor}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+
+\lstset{style=mystyle}
+
+\newcommand{\ri}[1]{\lstinline{#1}}  %% Short for 'R inline'
+
+\lstset{language=R}             % Set R to default language
+
+
+%https://tex.stackexchange.com/questions/96825/nicely-formatted-where-statement-for-maths
+ \newenvironment{where}{\noindent{}where\begin{itemize}}{\end{itemize}}
+ \renewcommand*\descriptionlabel[1]{\hspace\leftmargin$#1$}
+ 
+ %\newtheorem{theorem}{Theorem}[section]
+%\newtheorem{corollary}{Corollary}[theorem]
+%\newtheorem{lemma}[theorem]{Lemma}
+
+
+\lstset{escapeinside={<@}{@>}}
+% please place your own definitions here and don't use \def but
+% \newcommand{}{}
+%
+% Insert the name of "your journal" with
+% \journalname{myjournal}
+%
+\begin{document}
+
+\title{%
+  Practice 15: Ideas for the final project. } %\\~\\
+  %\Large }
+\author{Mayra Cristina Berrones Reyes 6291}
+
+\maketitle
+
+\section{Central Limit Theorem.}
+
+For this subject, the idea was to make some experiments with an available dataset (we are thinking the MNIST, since it is large enough) and experiment with different size of the test set, to see if the accuracy told by the trained model is consistent with the test set with all the different sizes of data.\\
+
+This experiment comes in line with some of the questions we had when we finalized our work in the masters thesis. One of the revisers asked if we had tried to see if changing the data sets size, our model improved or declined in accuracy.\\
+
+
+\section{Bayesian Theorem.}
+
+
+For the investigation we made of the Bayesian Theorem, we had the idea to evaluate several known Neural Networks used for transfer learning with the data set of Mini MIAS, which is a free data set of mammography's of that are already annotated. This is a very small data set (only 362 images in it) but as researched before, transfer learning thrives with small datasets because they are already pre trained with some weights. \\
+
+This could show us a stepping point to use with our actual images, conformed of a larger dataset, and with greater resolution (heavier to train).\\
+
+
+\section{Law of large numbers.}
+
+
+For this subject, we wanted to explore some of the qualities of different optimizers used in training convolutional neural networks. Each one of them has different features that try to correct the failings of its predecessors. And it is because all of this different versions that there is not one optimizer that is perfect for a certain problem. With the LLN we want to see if the optimizers are affected in a good or a bad way. If it helps them converge to the closest to optimal value, or if in some cases it becomes flawed and lands in over training.
+
+
+\section{Convolutions.}
+
+
+Convolutions are often used in types of Neural Networks. They are also used to enhance or add noise to some images. In our case, there are very few Kernels that are allowed in articles to be used in medical images, because they ofter distort the image in a way that adds features that can impair the classification and diagnostic process. \\
+
+In many articles for normal images, noise is added to the dataset to make the model more robust. Here we propose an experiment with two different datasets. The Mini MIAS and the MNIST to see if the same Kernels that help the MNIST dataset to be more robust, help improve or diminish the accuracy on the Mini MIAS dataset.\\
+
+
+ 
+\end{document}
