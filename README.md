@@ -31,3 +31,8 @@
 [Tarea 15](https://github.com/mayraberrones94/Probabilidad/blob/master/Tarea_15/Tarea15.pdf)
 
 
+[Proyecto Final](https://github.com/mayraberrones94/Probabilidad/blob/master/ProyectoFinal/Proyecto.pdf)
+
+[Portafolio](https://github.com/mayraberrones94/Probabilidad/blob/master/Evidencia_portafolio/Evidencia_portafolio_1646291.pdf)
+
+
